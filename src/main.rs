@@ -73,7 +73,7 @@ fn print_audio_file_info(file_name: &str) -> Result<(), String> {
     println!(
         " File Size: {:.2}M\n  Bit Rate: {:.2}M",
         reader.duration() as f64 * reader.spec().bits_per_sample as f64 / 4.0 / 1024.0 / 1024.0,
-        reader.spec().bits_per_sample as f64 * reader.spec().sample_rate as f64 / 1024.0 / 1024.0
+        reader.spec().bits_per_sample as f64 * reader.spec().sample_rate as f64 / 512.0 / 1024.0
     );
     let encoding = match reader.spec().sample_format {
         hound::SampleFormat::Int => "Integer PCM",
